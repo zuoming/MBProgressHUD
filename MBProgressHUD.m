@@ -287,12 +287,11 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     // Cancel any scheduled hideDelayed: calls
     [self.hideDelayTimer invalidate];
 
-    if (finished) {
-        self.alpha = 0.0f;
-        if (self.removeFromSuperViewOnHide) {
-            [self removeFromSuperview];
-        }
-    }
+	self.alpha = 0.0f;
+	if (self.removeFromSuperViewOnHide) {
+		[self removeFromSuperview];
+	}
+	
     MBProgressHUDCompletionBlock completionBlock = self.completionBlock;
     if (completionBlock) {
         completionBlock();
